@@ -9,8 +9,10 @@ export default createStore({
     storeTodos(state, payload) {
       state.todos = payload;
     },
+    storeTodo(state, payload) {
+      state.todos.unshift(payload);
+    },
   },
-  getters: {},
   actions: {
     getTodos({ commit }) {
       return new Promise((resolve) => {
@@ -22,6 +24,14 @@ export default createStore({
         }, 800);
       });
     },
+    addTodo({ commit }, data) {
+      return axios
+        .post("http://localhost:3000/todos", data)
+        .then((response) => {
+          commit("storeTodo", response.data);
+        });
+    },
   },
+  getters: {},
   modules: {},
 });
