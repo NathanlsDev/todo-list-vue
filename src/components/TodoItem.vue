@@ -28,6 +28,7 @@
           placeholder="Digite a sua tarefa"
           :value="todo.title"
           class="bg-gray-300 placeholder-gray-500 text-gray-700 font-light focus:outline-none block w-full appearance-none leading-normal mr-3"
+          @keyup.enter="updateTodo"
         />
       </div>
 
@@ -62,6 +63,24 @@ export default {
     todo: {
       type: Object,
       default: () => ({}),
+    },
+  },
+  methods: {
+    updateTodo({ target }) {
+      const newTitle = target.value.trim();
+
+      if (!newTitle) {
+        return;
+      }
+
+      const payload = {
+        id: this.todo.id,
+        data: {
+          title: newTitle,
+          completed: this.todo.completed,
+        },
+      };
+      this.$store.dispatch("updateTodo", payload);
     },
   },
 };
