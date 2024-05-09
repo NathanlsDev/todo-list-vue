@@ -9,8 +9,13 @@ export default createStore({
     storeTodos(state, payload) {
       state.todos = payload;
     },
+
     storeTodo(state, payload) {
-      state.todos.push(payload);
+      const index = state.todos.findIndex((todo) => todo.id === payload.id);
+      
+      return index >= 0
+        ? state.todos.splice(index, 1, payload)
+        : state.todos.push(payload);
     },
   },
   actions: {
@@ -33,8 +38,12 @@ export default createStore({
         });
     },
 
-    updateTodo(context, { id, data }) {
-      return axios.put(`http://localhost:3000/todos/${id}`, data);
+    updateTodo({ commit }, { id, data }) {
+      return axios
+        .put(`http://localhost:3000/todos/${id}`, data)
+        .then((response) => {
+          commit("storeTodo", response.data);
+        });
     },
   },
   getters: {},

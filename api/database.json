@@ -6,13 +6,13 @@
       "id": "1"
     },
     {
-      "title": "Estudar Vue",
-      "completed": true,
+      "title": "Estudar Vue3",
+      "completed": false,
       "id": "2"
     },
     {
       "title": "Estudar composition API",
-      "completed": true,
+      "completed": false,
       "id": "3"
     }
   ]
