@@ -1,19 +1,19 @@
 {
   "todos": [
     {
-      "id": "27a9",
-      "title": "Estudar javascript",
-      "completed": false
+      "title": "Estudar Javascript",
+      "completed": false,
+      "id": "7fe5"
     },
     {
-      "id": "1ea9",
-      "title": "Estudar Vue",
-      "completed": false
+      "title": "Estudar Vue3",
+      "completed": false,
+      "id": "76db"
     },
     {
-      "id": "76cf",
-      "title": "Estudar composition API",
-      "completed": false
+      "title": "Estudar composition APi",
+      "completed": false,
+      "id": "6ff8"
     }
   ]
 }
