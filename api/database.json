@@ -6,14 +6,14 @@
       "completed": false
     },
     {
-      "id": "faff",
       "title": "Estudar Vue3",
-      "completed": false
+      "completed": false,
+      "id": "faff"
     },
     {
-      "id": "2a1e",
       "title": "Estudar Composition APi",
-      "completed": false
+      "completed": false,
+      "id": "2a1e"
     }
   ]
 }

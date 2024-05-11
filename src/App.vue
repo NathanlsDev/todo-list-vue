@@ -19,10 +19,10 @@
 <script>
 import { ref } from "vue";
 import { useStore } from "vuex";
-import TodoSpinner from "./components/TodoSpinner.vue";
-import TodoFormAdd from "./components/TodoFormAdd.vue";
-import TodoItems from "./components/TodoItems.vue";
-import TodoEmpty from "./components/TodoEmpty.vue";
+import TodoSpinner from "@/components/TodoSpinner.vue";
+import TodoFormAdd from "@/components/TodoFormAdd.vue";
+import TodoItems from "@/components/TodoItems.vue";
+import TodoEmpty from "@/components/TodoEmpty.vue";
 
 export default {
   components: {
