@@ -7,7 +7,7 @@
           <TodoFormAdd />
           <TodoItems
             v-if="$store.state.todos.length"
-            class="max-h-screen max-h-[60vh] overflow-scroll no-scrollbar"
+            class="max-h-[60vh] overflow-scroll no-scrollbar"
           />
           <TodoEmpty v-else />
         </template>
