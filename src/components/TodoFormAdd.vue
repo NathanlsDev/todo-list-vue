@@ -20,31 +20,35 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import { useStore } from "vuex";
+
 export default {
-  data() {
-    return {
-      title: "",
-    };
-  },
-  methods: {
-    addTodo() {
-      const isFalsyOrBlankValue = this.validateTodo();
+  setup() {
+    const title = ref('');
+    const store = useStore();
+
+    const addTodo = () => {
+      const isFalsyOrBlankValue = validateTodo();
+
       if (isFalsyOrBlankValue) {
         return;
       }
 
-      this.$store
+      store
         .dispatch("addTodo", {
-          title: this.title,
+          title: title.value,
           completed: false,
         })
-        .finally(() => {
-          this.title = "";
-        });
-    },
-    validateTodo() {
-      return !this.title || !/^(?!\s*$).+/.test(this.title);
-    },
+        .finally(() => (title.value = ""));
+    };
+
+    const validateTodo = () => !title.value || !/^(?!\s*$).+/.test(title.value);
+
+    return {
+      title,
+      addTodo,
+    };
   },
 };
 </script>
